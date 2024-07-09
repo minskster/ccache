@@ -869,6 +869,12 @@ process_option_arg(const Context& ctx,
     return Statistic::none;
   }
 
+  // -Wno-error=<Warning_type>
+  if (util::starts_with(arg, "-Wno-error=")) {    
+    state.compiler_only_args.push_back(args[i]);    
+    return Statistic::none;
+  }  
+
   if (arg == "--coverage"      // = -fprofile-arcs -ftest-coverage
       || arg == "-coverage") { // Undocumented but still works.
     args_info.profile_arcs = true;
