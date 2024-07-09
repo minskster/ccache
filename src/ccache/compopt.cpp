@@ -92,7 +92,8 @@ const CompOpt compopts[] = {
   {"-Wa,", TAKES_CONCAT_ARG | AFFECTS_COMP},
   {"-Werror", AFFECTS_COMP}, // don't exit with error when preprocessing
   {"-Wl,", TAKES_CONCAT_ARG | AFFECTS_COMP},
-  {"-Wno-error", AFFECTS_COMP},
+  //{"-Wno-error", AFFECTS_COMP},
+  {"-Wno-error=", AFFECTS_COMP | TAKES_CONCAT_ARG},
   {"-Xassembler", TAKES_ARG | TAKES_CONCAT_ARG | AFFECTS_COMP},
   {"-Xclang", TAKES_ARG},
   {"-Xcompiler", AFFECTS_CPP | TAKES_ARG}, // nvcc
